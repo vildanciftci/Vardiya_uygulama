@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}Giriş Kayıtları{% endblock %}
+{% block content %}
+<style>
+    body {
+    background-color: #f5f5f5;  /* Gri arka plan */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;  /* Koyu gri metin rengi */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Başlık */
+h2 {
+    text-align: center;
+    color: #d16d8f;  /* Pembe başlık rengi */
+    margin-bottom: 30px;
+}
+
+/* Tablo stili */
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #ffffff;  /* Beyaz arka plan */
+    border: 1px solid #d16d8f;  /* Pembe kenarlık */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Başlık hücreleri */
+th {
+    background-color: #d16d8f;  /* Pembe başlık hücreleri */
+    color: #ffffff;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #d16d8f;
+}
+
+/* Veri hücreleri */
+td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #d16d8f;
+    color: #555555;  /* Açık gri metin */
+}
+
+/* Alternatif satır rengi */
+tr:nth-child(even) {
+    background-color: #f7e0e5;  /* Pembe tonları */
+}
+
+/* Hover efekti */
+tr:hover {
+    background-color: #f5c1d3;  /* Hafif pembe hover rengi */
+}
+
+/* Bağlantılar (Düzenle vs.) */
+a {
+    color: #d16d8f;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 1px solid #d16d8f;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #d16d8f;
+    color: #fff;
+}
+
+</style>
+<h2>Giriş Kayıtları</h2>
+<table border="1">
+    <tr>
+        <th>Ad Soyad</th>
+        <th>Tarih</th>
+        <th>Giriş Saati</th>
+        <th>Çıkış Saati</th>
+    </tr>
+    {% for kayit in giris_kayitlari %}
+    <tr>
+        <td>{{ kayit.ad_soyad }}</td>
+        <td>{{ kayit.tarih }}</td>
+        <td>{{ kayit.giris_saati }}</td>
+        <td>{{ kayit.cikis_saati }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

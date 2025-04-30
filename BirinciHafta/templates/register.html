@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Kayıt Ol{% endblock %}
+{% block content %}
+<style>
+    body {
+    background-color: #f5f5f5;  /* Gri arka plan */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;  /* Koyu gri metin rengi */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Başlık */
+h2 {
+    text-align: center;
+    color: #d16d8f;  /* Pembe başlık rengi */
+    margin-bottom: 30px;
+}
+
+/* Kayıt Ol Formu */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;  /* Beyaz arka plan */
+    border: 1px solid #d16d8f;  /* Pembe kenarlık */
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form etiketleri */
+label {
+    color: #333333;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Giriş alanları */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #d16d8f;  /* Pembe kenarlık */
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Buton */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #d16d8f;  /* Pembe buton rengi */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #990000;  /* Koyu pembe hover rengi */
+}
+
+</style>
+<h2>Kayıt Ol</h2>
+<form method="post" action="/register">
+    <input type="text" name="username" placeholder="Kullanıcı Adı" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="password" name="password" placeholder="Şifre" required><br>
+    <button type="submit">Kayıt Ol</button>
+</form>
+{% endblock %}

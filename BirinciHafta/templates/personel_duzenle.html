@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Personel Düzenle{% endblock %}
+{% block content %}
+<style>
+    body {
+    background-color: #f5f5f5;  /* Gri arka plan */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;  /* Koyu gri metin rengi */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Başlık */
+h2 {
+    text-align: center;
+    color: #d16d8f;  /* Pembe başlık rengi */
+    margin-bottom: 30px;
+}
+
+/* Personel Düzenleme Formu Konteyneri */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;  /* Beyaz arka plan */
+    border: 1px solid #d16d8f;  /* Pembe kenarlık */
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Etiketleri */
+label {
+    color: #333333;
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Giriş alanları */
+input[type="text"] {
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #d16d8f;  /* Pembe kenarlık */
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Buton */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #d16d8f;  /* Pembe buton rengi */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #990000;  /* Koyu pembe hover rengi */
+}
+
+/* Genel form düzeni */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+</style>
+<h2>Personel Düzenle</h2>
+<form method="post" action="/personel/duzenle/{{ personel.id }}">
+    <input type="text" name="ad_soyad" value="{{ personel.ad_soyad }}" required><br>
+    <input type="text" name="departman" value="{{ personel.departman }}" required><br>
+    <button type="submit">Güncelle</button>
+</form>
+{% endblock %}

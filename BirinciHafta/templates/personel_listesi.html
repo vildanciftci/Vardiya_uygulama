@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Personel Listesi{% endblock %}
+{% block content %}
+<style>
+    body {
+    background-color: #f5f5f5;  /* Gri arka plan */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;  /* Koyu gri metin rengi */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Başlık */
+h2 {
+    text-align: center;
+    color: #d16d8f;  /* Pembe başlık rengi */
+    margin-bottom: 30px;
+}
+
+/* Tablo stili */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #d16d8f;  /* Pembe kenarlık */
+}
+
+th {
+    background-color: #d16d8f;  /* Pembe başlık arka plan */
+    color: #ffffff;  /* Beyaz metin */
+}
+
+td {
+    background-color: #ffffff;  /* Beyaz arka plan */
+    color: #333333;  /* Koyu gri metin */
+}
+
+/* Tablo satırları üzerine hover efekti */
+tr:hover {
+    background-color: #f9f9f9;  /* Hafif gri arka plan hover rengi */
+}
+
+/* Bağlantılar */
+a {
+    color: #d16d8f;  /* Pembe bağlantı rengi */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;  /* Altı çizili hover efekti */
+}
+
+</style>
+<h2>Personel Listesi</h2>
+<table border="1">
+    <tr>
+        <th>Ad Soyad</th>
+        <th>Departman</th>
+        <th>İşlem</th>
+    </tr>
+    {% for personel in personeller %}
+    <tr>
+        <td>{{ personel.ad_soyad }}</td>
+        <td>{{ personel.departman }}</td>
+        <td>
+            <a href="/personel/duzenle/{{ personel.id }}">Düzenle</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
