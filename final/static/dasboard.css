@@ -1,0 +1,65 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+h2 {
+    color: #004080;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.welcome-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.welcome-section .logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.about-section h3,
+.quick-links h3 {
+    color: #003366;
+    margin-top: 20px;
+}
+
+.about-section p,
+.welcome-section p {
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.6;
+}
+
+.quick-links ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.quick-links li {
+    margin-bottom: 10px;
+}
+
+.quick-links a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.quick-links a:hover {
+    color: #004080;
+}
